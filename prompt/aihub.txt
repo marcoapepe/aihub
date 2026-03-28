@@ -146,3 +146,12 @@ Clean up the prompt responses json files.
 Remove the API KEY from the .env file.
 You call finalize the executions of uvicorn and vite. 
 And finally, provide me the commands to add the project to Github and push the code to  git@github.com:marcoapepe/aihub.git
+
+
+After the code is cloned to another computer, 
+what are the commands for install the backend and frontend. 
+Before we have to edit the .env in the backend.
+But after this, what are the list of commands to run? 
+I mean venv for Python, vite, etc.
+
+could you add all these instructions into the README.md file?
