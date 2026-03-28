@@ -1,0 +1,148 @@
+we are going to create a React and FastAPI project called AIHUB.
+
+The frontend has to be written in React and can use the existing code in available on frontend folder as reference.
+But it is not mandatory.
+If you have something better to use, go ahead. You can discard this code.
+
+The frontend will have these features:
+- User can upload PDF files
+- User can see the PDF files on screen
+- User can see all PDF files that were uploaded
+- Every PDF file uploaded will have a serial number, starting with 1. An incremental counter. 
+- All PDF files uploaded will be stored on files folder
+- As the application will not have a database, we need to have a kind of database file where the #counter and pdf file name will be stored.
+
+The Frontend will have a initial screen with two button, one to upload new PDF files and another button to see all PDF files that were uploaded
+
+Once a document is uploaded, the screen will show the document on screen. 
+User can scroll up and down on it. 
+
+Important. Don't use the entire screen to show the document. 
+On the right, we will have some extra features. 
+Allocate 60% of the screen of the left to show the document. 
+The other 40% on the right, we will use to one verry important function. 
+We will have a text box where the user will input a prompt text. 
+And a button that will call an API on the backend. 
+And another text below to show the results from the API. 
+Then below we will have another button that will save everything on the database file. 
+This database file can be any stand alone database. You can choose the best way to do.
+It will have:
+- counter
+- document name
+- prompt that was inputted by user
+- response from the API
+
+The backend specifications:
+The backend is one FASTAPI server that will have one endpoint only.
+The endpoint will receive a prompt text and will call OpenAI API. 
+We can choose GPT5 model for it initially. Later on we can a add a feature on screen to have more models to choose.
+And the result of OpenAI API will be the response to the frontend.
+
+The API KEY will be saved on a .env file.
+
+You can start coding now.
+
+
+
+The application is good. Great!
+Now I want an enhancement on the application.
+You can clean the current files we have uploaded before. 
+1 and 2. 
+Because I want something different to do. 
+Once the user upload a document, I want one default prompt text instead of blank. 
+The prompt will be this one (in Portuguese):
+
+
+<prompt>
+
+    Você uma API de extração de dados.
+
+    Retorne APENAS um JSON válido.
+    Não inclua explicações, nem comentários, ou outro texto. 
+    Retorne apenas o JSON.
+
+    JSON Schema:
+    {{
+    "name1": {{ "type": "string" }}, //optional
+    "name2": {{ "type": "string" }}, //optional
+    "name3": {{ "type": "string" }}, //optional
+    "name4": {{ "type": "string" }}, //optional
+    "name5": {{ "type": "string" }} //optional
+    }}
+
+    Pergunta:
+    Identifique até 5 nomes de empresas ou nome de pessoas no documento anexado.
+
+</prompt>
+
+Instead of having one single text box with the return of the API, I want to have 5 single line text boxes. 
+One for each response obtained from the API response. 
+
+   JSON Schema:
+    {{
+    "name1": {{ "type": "string" }}, //optional
+    "name2": {{ "type": "string" }}, //optional
+    "name3": {{ "type": "string" }}, //optional
+    "name4": {{ "type": "string" }}, //optional
+    "name5": {{ "type": "string" }} //optional
+    }}
+
+The final button that stores the document and prompt need to save the prompt and the answers. 
+User can edit the answers. The data in the 5 name text boxes. 
+So it is important to save the text box that can be edited. 
+
+Later one, when the user see all uploaded documents, user can see what he edited before. 
+
+You can start coding now.
+
+
+
+The application is good. Great!
+Now I want a new enhancement on the application.
+This demand may be difficult. 
+I want to highlight the PDF the names returned from the API response.
+I want to paint in YELLOW the names, up to 5 names that were returned. 
+Is it possible to do it? 
+I can also modify the prompt and ask the OPENAI model to tell me in which line the names show up. 
+But I prefer doing it with PDF search on the document. 
+Could you investigate if this is the best option. 
+Tell me which options are recommended to highlight the document on screen.
+You can analyse if other libraries are necessary.
+
+Could you use Option A — Client-side text search ?
+Please go ahead coding it.
+
+
+The application is good. Great!
+Now I want that you do one assessment for me.
+How difficult is to extend the support for other document extensions like JPG images?
+What are the concerns? Which libraries we need to install, etc.
+
+OK. I  liked phase 1.  
+And keeping the functions that are working well for PDF text based. Highlighting the text in yellow.
+If it is an image, no problem. We can live without the highlight for the moment. 
+But question. How the model will receive the data for a JPG file. 
+WHat is the idea? Can we send the image file directly to the API? 
+Or are you going to use one OCR to extract the data to send to the model?
+Moreover, if we upload a PDF with image. What is the behaviour dealing with OpenAI API?
+
+Excellent.
+What I want is explanied below.
+For PDF, first test if the PDF is a Text or Scanned one. 
+If pypdf doesn't recognize the PDF as a text, send the PDF as a whole to the model. 
+Like the application will do for JPG files. 
+So the app will have two behaviours: one for text based documents and another for image based documents. 
+Please implement this feature.
+
+The project is completed.
+Congratulations. 
+Now I need your help to upload the project to Github. 
+The repository was created at  git@github.com:marcoapepe/aihub.git
+I need your help.
+First create the gitignore files on frontend and backend.
+Remove all files uploaded. Currently there are 4 documents. Delete all of them. 
+remove them from the control json file.
+Clean up the prompt responses json files. 
+Remove the API KEY from the .env file.
+You call finalize the executions of uvicorn and vite. 
+And finally, provide me the commands to add the project to Github and push the code to  git@github.com:marcoapepe/aihub.git

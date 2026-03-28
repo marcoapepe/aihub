@@ -1,0 +1,19 @@
+.venv
+venv
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Env (never commit secrets)
+.env
+.env.*
+!.env.example
+
+.DS_Store

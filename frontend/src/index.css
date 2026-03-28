@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0
+}
+
+/* Client-side search highlights for extracted names (yellow) */
+.pdf-viewer-names-highlight .rpv-search__highlight {
+  background: rgba(255, 235, 59, 0.62) !important;
+  border-radius: 1px;
+}
+.pdf-viewer-names-highlight .rpv-search__highlight--current {
+  background: rgba(255, 193, 7, 0.85) !important;
+}

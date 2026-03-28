@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+
+# User uploads (keep directory with .gitkeep only)
+files/*
+!files/.gitkeep
